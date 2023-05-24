@@ -2,7 +2,9 @@
   "name": "@ngx-dynamic-headings/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx serve h-tags-playground"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.0.0",
