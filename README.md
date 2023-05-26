@@ -8,3 +8,6 @@ Build your angular component, then use `<ngx-dynamic-heading content="Hello, Wor
 
 Run `npm run dev` to run a development server. This app is used as a playground to experiment with the **ngx-dynamic-heading** lib
 
+## Dynamic headings lib docs
+
+Go to [ngx-dynamic-headings docs](/libs/ngx-dynamic-headings/README.md)

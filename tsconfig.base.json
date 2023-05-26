@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngx-dynamic-headings/ngx-dynamic-headings": [
+      "@ngx-dynamic-headings": [
         "libs/ngx-dynamic-headings/src/index.ts"
       ]
     }

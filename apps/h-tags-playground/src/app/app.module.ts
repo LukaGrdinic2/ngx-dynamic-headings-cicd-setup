@@ -1,4 +1,4 @@
-import { NgxDynamicHeadingsModule } from './../../../../libs/ngx-dynamic-headings/src/lib/ngx-dynamic-headings.module';
+import { NgxDynamicHeadingsModule } from '@ngx-dynamic-headings';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
