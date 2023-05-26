@@ -1,20 +1,24 @@
-import { Component, ElementRef, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, OnInit, Input, ViewChild, ViewContainerRef } from '@angular/core';
 import { extractNumberFromString, getSortedHeadings } from './utils/utils';
 
 @Component({
-  selector: 'ngx-dynamic-heading',
+  selector: 'h',
   templateUrl: './dynamic-heading.component.html',
   styleUrls: ['./dynamic-heading.component.css'],
 })
 export class DynamicHeadingComponent implements OnInit {
 
+  @ViewChild('template', { static: true }) template: any;
+
   @Input() content!: string;
 
   resolvedHeadingLevel!: string;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef) {}
 
   ngOnInit(): void {
+
+    this.viewContainerRef.createEmbeddedView(this.template);
     const headings = getSortedHeadings();
     const headingsParentNodes = Array.from(headings).map(h => h.parentNode);
     let smallestHeadingLevel = extractNumberFromString(headings[0].tagName);
@@ -26,5 +30,14 @@ export class DynamicHeadingComponent implements OnInit {
         smallestHeadingLevel = extractNumberFromString(headings[i + 1].tagName);
       }
     }
+    this.destroyComponent();
+  }
+
+  destroyComponent() {
+    this.viewContainerRef
+    .element
+    .nativeElement
+    .parentElement
+    .removeChild(this.viewContainerRef.element.nativeElement);
   }
 }
