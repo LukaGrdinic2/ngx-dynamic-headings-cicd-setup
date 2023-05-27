@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('h-tags-playground', () => {
+describe('web', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('h-tags-playground', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome h-tags-playground');
+    getGreeting().contains('Welcome web');
   });
 });

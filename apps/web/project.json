@@ -1,25 +1,25 @@
 {
-  "name": "h-tags-playground",
+  "name": "web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "ngx-dynamic-headings",
-  "sourceRoot": "apps/h-tags-playground/src",
+  "sourceRoot": "apps/web/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/h-tags-playground",
-        "index": "apps/h-tags-playground/src/index.html",
-        "main": "apps/h-tags-playground/src/main.ts",
+        "outputPath": "dist/apps/web",
+        "index": "apps/web/src/index.html",
+        "main": "apps/web/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/h-tags-playground/tsconfig.app.json",
+        "tsConfig": "apps/web/tsconfig.app.json",
         "assets": [
-          "apps/h-tags-playground/src/favicon.ico",
-          "apps/h-tags-playground/src/assets"
+          "apps/web/src/favicon.ico",
+          "apps/web/src/assets"
         ],
-        "styles": ["apps/h-tags-playground/src/styles.scss"],
+        "styles": ["apps/web/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "h-tags-playground:build:production"
+          "browserTarget": "web:build:production"
         },
         "development": {
-          "browserTarget": "h-tags-playground:build:development"
+          "browserTarget": "web:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "h-tags-playground:build"
+        "browserTarget": "web:build"
       }
     },
     "lint": {
@@ -72,8 +72,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/h-tags-playground/**/*.ts",
-          "apps/h-tags-playground/**/*.html"
+          "apps/web/**/*.ts",
+          "apps/web/**/*.html"
         ]
       }
     },
@@ -81,7 +81,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/h-tags-playground/jest.config.ts",
+        "jestConfig": "apps/web/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -94,7 +94,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "h-tags-playground:build"
+        "buildTarget": "web:build"
       }
     }
   }

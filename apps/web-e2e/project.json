@@ -1,22 +1,22 @@
 {
-  "name": "h-tags-playground-e2e",
+  "name": "web-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/h-tags-playground-e2e/src",
+  "sourceRoot": "apps/web-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/h-tags-playground-e2e/cypress.config.ts",
-        "devServerTarget": "h-tags-playground:serve:development",
+        "cypressConfig": "apps/web-e2e/cypress.config.ts",
+        "devServerTarget": "web:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "h-tags-playground:serve:production"
+          "devServerTarget": "web:serve:production"
         },
         "ci": {
-          "devServerTarget": "h-tags-playground:serve-static"
+          "devServerTarget": "web:serve-static"
         }
       }
     },
@@ -24,10 +24,10 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/h-tags-playground-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/web-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["h-tags-playground"]
+  "implicitDependencies": ["web"]
 }

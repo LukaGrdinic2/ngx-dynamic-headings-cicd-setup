@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx serve h-tags-playground"
+    "dev": "nx serve web"
   },
   "private": true,
   "dependencies": {
