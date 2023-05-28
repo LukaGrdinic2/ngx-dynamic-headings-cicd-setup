@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ngx-dynamic-headings-card',
+  selector: 'web-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
 })

@@ -2,7 +2,7 @@
   "name": "web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "ngx-dynamic-headings",
+  "prefix": "web",
   "sourceRoot": "apps/web/src",
   "tags": [],
   "targets": {

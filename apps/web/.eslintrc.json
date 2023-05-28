@@ -9,7 +9,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngxDynamicHeadings",
+            "prefix": "web",
             "style": "camelCase"
           }
         ],
@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ngx-dynamic-headings",
+            "prefix": "web",
             "style": "kebab-case"
           }
         ]

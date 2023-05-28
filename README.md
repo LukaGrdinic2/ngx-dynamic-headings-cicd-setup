@@ -10,4 +10,15 @@ Run `npm run dev` to run a development server. This app is used as a playground 
 
 ## Dynamic headings lib docs
 
-Go to [ngx-dynamic-headings docs](/libs/ngx-dynamic-headings/README.md)
+### Running unit tests
+
+Run `nx test ngx-dynamic-headings` to execute the unit tests.
+
+### Building the lib
+
+`nx build ngx-dynamic-headings`
+
+### Docs
+
+Go to [ngx-dynamic-heading docs](/libs/ngx-dynamic-headings/README.md)
+

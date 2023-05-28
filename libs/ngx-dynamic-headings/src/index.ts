@@ -1,3 +1,3 @@
 export * from './lib/ngx-dynamic-headings.module';
 
-export * from './lib/dynamic-heading/src/dynamic-heading.component';
+export * from './lib/dynamic-headings/src/dynamic-heading.component';

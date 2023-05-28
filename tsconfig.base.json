@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@ngx-dynamic-headings": [
-        "libs/ngx-dynamic-headings/src/index.ts"
+        "dist/libs/ngx-dynamic-headings"
       ]
     }
   },
