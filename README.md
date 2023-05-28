@@ -2,7 +2,7 @@
 
 A library to help you use dynamic headings in your angular app. 
 
-Build your angular component, then use `<ngx-dynamic-heading content="Hello, World!"></ngx-dynamic-heading>` and your heading level will generate automatically based on where it is in the app.  
+A monorepo containing the library source code as well as a playground web app to test the lib behaviour.
 
 ## Development server
 

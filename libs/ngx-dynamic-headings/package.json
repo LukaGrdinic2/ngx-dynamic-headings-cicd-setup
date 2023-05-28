@@ -1,6 +1,6 @@
 {
   "name": "ngx-dynamic-headings",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0"
@@ -8,5 +8,15 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LukaGrdinic/ngx-dynamic-headings.git",
+    "directory": "libs/ngx-dynamic-headings"
+  },
+  "keywords": [
+    "angular",
+    "headings",
+    "accessibility"
+  ],
   "sideEffects": false
 }
