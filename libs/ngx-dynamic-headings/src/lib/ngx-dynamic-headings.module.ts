@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DynamicHeadingComponent } from './dynamic-headings/src/dynamic-heading.component';
+import { DynamicHeadingDirective } from './dynamic-headings/src/directives/dynamic-heading.directive';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [DynamicHeadingComponent],
-  exports: [DynamicHeadingComponent],
+  declarations: [DynamicHeadingDirective],
+  exports: [DynamicHeadingDirective],
 })
 export class NgxDynamicHeadingsModule {}

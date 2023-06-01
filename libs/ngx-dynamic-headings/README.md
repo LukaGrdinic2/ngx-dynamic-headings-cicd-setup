@@ -1,5 +1,7 @@
 # ngx-dynamic-headings
 
+Dynamic Headings Generation Library
+
 ## Usage
 
 To use the library in your project, install ngx-dynamic-headings from npm:
