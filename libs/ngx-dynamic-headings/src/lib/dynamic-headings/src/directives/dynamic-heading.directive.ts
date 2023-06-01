@@ -5,7 +5,7 @@ import { extractNumberFromString, getSortedHeadings } from '../utils/utils';
   selector: 'h',
 })
 export class DynamicHeadingDirective implements AfterContentInit {
-  resolvedHeadingLevel!: string;
+  resolvedHeadingLevel = 'h1';
   headingText = '';
 
   constructor(public elementRef: ElementRef<HTMLUnknownElement>) {}
@@ -14,14 +14,19 @@ export class DynamicHeadingDirective implements AfterContentInit {
     this.headingText = this.elementRef.nativeElement.outerText;
     const headings = getSortedHeadings();
     const headingsParentNodes = Array.from(headings).map((h) => h.parentNode);
-    let smallestHeadingLevel = extractNumberFromString(headings[0].tagName);
+    let biggestHeadingLevel = extractNumberFromString(headings[0].tagName);
     for (let i = 0; i < headingsParentNodes.length; i++) {
       if (headingsParentNodes[i]?.contains(this.elementRef.nativeElement)) {
-        this.resolvedHeadingLevel = `h${smallestHeadingLevel + 1}`;
+        this.resolvedHeadingLevel = `h${biggestHeadingLevel + 1}`;
         this.replaceWithResolvedHeading();
         break;
       } else {
-        smallestHeadingLevel = extractNumberFromString(headings[i + 1].tagName);
+        if (headings[i + 1]) {
+          biggestHeadingLevel = extractNumberFromString(headings[i + 1].tagName);
+        } else {
+          this.replaceWithResolvedHeading();
+          break;
+        }
       }
     }
   }
