@@ -13,10 +13,14 @@
     "url": "https://github.com/LukaGrdinic/ngx-dynamic-headings.git",
     "directory": "libs/ngx-dynamic-headings"
   },
+  "bugs": {
+    "url": "https://github.com/LukaGrdinic/ngx-dynamic-headings/issues"
+  },
   "keywords": [
     "angular",
     "headings",
     "accessibility"
   ],
+  "license" : "MIT",
   "sideEffects": false
 }
