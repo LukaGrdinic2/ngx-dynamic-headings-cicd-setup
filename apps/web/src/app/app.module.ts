@@ -1,14 +1,20 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { CardComponent } from './card/card/card.component';
+import { WhyGroomCatsComponent } from './why-groom-cats/why-groom-cats/why-groom-cats.component';
+import { CustomGroomingExperienceComponent } from './custom-grooming-experience/custom-grooming-experience/custom-grooming-experience.component';
 import { NgxDynamicHeadingsModule } from 'ngx-dynamic-headings';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent],
+  declarations: [
+    AppComponent,
+    CardComponent,
+    WhyGroomCatsComponent,
+    CustomGroomingExperienceComponent,
+  ],
   imports: [
     BrowserModule,
     NgxDynamicHeadingsModule,

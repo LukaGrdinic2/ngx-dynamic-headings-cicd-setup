@@ -18,7 +18,16 @@ Run `nx test ngx-dynamic-headings` to execute the unit tests.
 
 `nx build ngx-dynamic-headings`
 
+### Publishing the lib
+
+`cd /dist/libs/ngx-dynamic-headings`
+
+`npm publish`
+
 ### Docs
 
 Go to [ngx-dynamic-heading docs](/libs/ngx-dynamic-headings/README.md)
 
+## To generate a component 
+
+nx g @nrwl/angular:component section --path="apps/web/section" --project='web'
