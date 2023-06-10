@@ -11,21 +11,23 @@ export class DynamicHeadingDirective implements AfterContentInit {
   constructor(public elementRef: ElementRef<HTMLUnknownElement>) {}
 
   ngAfterContentInit() {
-    this.headingText = this.elementRef.nativeElement.outerText;
+    this.headingText = this.elementRef.nativeElement.textContent as string;
     const headings = getSortedHeadings();
+    if (headings.length === 0) {
+      this.resolvedHeadingLevel = 'h1';
+      return this.replaceWithResolvedHeading();
+    }
     const headingsParentNodes = Array.from(headings).map((h) => h.parentNode);
     let biggestHeadingLevel = extractNumberFromString(headings[0].tagName);
     for (let i = 0; i < headingsParentNodes.length; i++) {
       if (headingsParentNodes[i]?.contains(this.elementRef.nativeElement)) {
         this.resolvedHeadingLevel = `h${biggestHeadingLevel + 1}`;
-        this.replaceWithResolvedHeading();
-        break;
+        return this.replaceWithResolvedHeading();
       } else {
         if (headings[i + 1]) {
           biggestHeadingLevel = extractNumberFromString(headings[i + 1].tagName);
         } else {
-          this.replaceWithResolvedHeading();
-          break;
+          return this.replaceWithResolvedHeading();
         }
       }
     }
