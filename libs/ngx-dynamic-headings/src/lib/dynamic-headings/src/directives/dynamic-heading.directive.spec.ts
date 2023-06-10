@@ -129,10 +129,10 @@ describe('DynamicHeadingDirective', () => {
       fixture.detectChanges();
     });
 
-    it('should have an h6 heading in template and it should contain text "Test"', () => {
-      const h6: HTMLElement = fixture.nativeElement.querySelector('h6');
-      expect(h6).toBeInstanceOf(HTMLElement);
-      const text = h6.innerText;
+    it('should have an h7 heading in template and it should contain text "Test"', () => {
+      const h7: HTMLElement = fixture.nativeElement.querySelector('h7');
+      expect(h7).toBeInstanceOf(HTMLElement);
+      const text = h7.innerText;
       expect(text).toBe('Test');
     });
   });
