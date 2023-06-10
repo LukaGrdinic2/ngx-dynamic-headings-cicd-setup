@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx serve web"
+    "dev": "nx serve web",
+    "test": "nx test ngx-dynamic-headings",
+    "build:ngx-dynamic-headings": "nx build ngx-dynamic-headings"
   },
   "private": true,
   "dependencies": {
