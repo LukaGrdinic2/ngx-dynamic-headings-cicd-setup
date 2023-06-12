@@ -114,7 +114,7 @@ describe('DynamicHeadingDirective', () => {
     });
   });
 
- /*  describe('H6Component use cases', () => {
+  describe('H6Component use cases', () => {
     let component: H6Component;
     let fixture: ComponentFixture<H6Component>;
 
@@ -135,5 +135,5 @@ describe('DynamicHeadingDirective', () => {
       const text = h6.innerText;
       expect(text).toBe('Test');
     });
-  }); */
+  });
 });
