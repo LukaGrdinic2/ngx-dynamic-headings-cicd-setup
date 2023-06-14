@@ -39,4 +39,4 @@ jobs:
       - name: Create a Release
         run: npx semantic-release
         env:
-          GH_TOKEN: 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
+          GH_TOKEN: ${{ secrets.DH_PAT }}
