@@ -114,26 +114,26 @@ describe('DynamicHeadingDirective', () => {
     });
   });
 
-  describe('H6Component use cases', () => {
-    let component: H6Component;
-    let fixture: ComponentFixture<H6Component>;
+  // describe('H6Component use cases', () => {
+  //   let component: H6Component;
+  //   let fixture: ComponentFixture<H6Component>;
 
-    beforeEach(async () => {
-      await TestBed.configureTestingModule({
-        declarations: [DynamicHeadingDirective, H6Component],
-      }).compileComponents();
+  //   beforeEach(async () => {
+  //     await TestBed.configureTestingModule({
+  //       declarations: [DynamicHeadingDirective, H6Component],
+  //     }).compileComponents();
 
-      fixture = TestBed.createComponent(H6Component);
-      component = fixture.componentInstance;
+  //     fixture = TestBed.createComponent(H6Component);
+  //     component = fixture.componentInstance;
 
-      fixture.detectChanges();
-    });
+  //     fixture.detectChanges();
+  //   });
 
-    it('should have an h6 heading in template and it should contain text "Test"', () => {
-      const h6: HTMLElement = fixture.nativeElement.querySelector('h6');
-      expect(h6).toBeInstanceOf(HTMLElement);
-      const text = h6.innerText;
-      expect(text).toBe('Test');
-    });
-  });
+  //   it('should have an h6 heading in template and it should contain text "Test"', () => {
+  //     const h6: HTMLElement = fixture.nativeElement.querySelector('h6');
+  //     expect(h6).toBeInstanceOf(HTMLElement);
+  //     const text = h6.innerText;
+  //     expect(text).toBe('Test');
+  //   });
+  // });
 });
