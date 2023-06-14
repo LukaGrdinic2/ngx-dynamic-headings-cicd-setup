@@ -31,3 +31,5 @@ Go to [ngx-dynamic-heading docs](/libs/ngx-dynamic-headings/README.md)
 ## To generate a component 
 
 nx g @nrwl/angular:component section --path="apps/web/section" --project='web'
+
+TEST
