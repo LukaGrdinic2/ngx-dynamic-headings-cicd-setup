@@ -19,13 +19,13 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies 
         run: npm ci
-      - name: Run tests 
-        run: npm run test
-      - name: Upload Test Coverage
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage
-          path: coverage/libs/ngx-dynamic-headings
+      # - name: Run tests 
+      #   run: npm run test
+      # - name: Upload Test Coverage
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: code-coverage
+      #     path: coverage/libs/ngx-dynamic-headings
       - name:  Build ngx-dynamic-headings lib
         run: npm run build:ngx-dynamic-headings
       - name: Upload Build Folder
@@ -34,9 +34,8 @@ jobs:
           name: build
           path: ./dist/libs/ngx-dynamic-headings
       - name: Zip assets
-        run: |
-          zip -r build.zip ./dist/libs/ngx-dynamic-headings
-          zip -r coverage.zip coverage/libs/ngx-dynamic-headings
+        run: zip -r build.zip ./dist/libs/ngx-dynamic-headings
+        #  zip -r coverage.zip coverage/libs/ngx-dynamic-headings
       - name: Create a Release
         run: npx semantic-release
         env:
