@@ -1,0 +1,43 @@
+name: pull-request
+on:
+  push:
+    branches: [ main ]
+jobs:
+  test-build-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.5.0'
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies 
+        run: npm ci
+      - name: Run tests 
+        run: npm run test
+      - name: Upload Test Coverage
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage
+          path: coverage/libs/ngx-dynamic-headings
+      - name:  Build ngx-dynamic-headings lib
+        run: npm run build:ngx-dynamic-headings
+      - name: Upload Build Folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: ./dist/libs/ngx-dynamic-headings
+      - name: Zip assets
+        run: |
+          zip -r build.zip ./dist/libs/ngx-dynamic-headings
+          zip -r coverage.zip coverage/libs/ngx-dynamic-headings
+      - name: Create a Release
+        run: npx semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.NGX_DYNAMIC_HEADINGS_PAT }}
