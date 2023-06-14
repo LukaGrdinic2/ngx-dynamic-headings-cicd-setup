@@ -13,8 +13,8 @@ module.exports = {
           ],
         },
       ],
-      ["@semantic-release/npm", {
-        "pkgRoot": "/libs/ngx-dynamic-headings"
-      }]
+      // ["@semantic-release/npm", {
+      //   "pkgRoot": "/libs/ngx-dynamic-headings"
+      // }]
     ],
   };
