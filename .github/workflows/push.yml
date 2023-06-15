@@ -12,6 +12,10 @@ jobs:
       id-token: write # to enable use of OIDC for npm provenance
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Git
+        run: |
+          git config user.name LukaGrdinic
+          git config user.email 1lukagrdinic@gmail.com
       - uses: actions/setup-node@v3
         with:
           node-version: '18.5.0'
