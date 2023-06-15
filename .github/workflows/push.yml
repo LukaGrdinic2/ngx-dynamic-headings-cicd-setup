@@ -50,4 +50,4 @@ jobs:
       - name: Publish to npm
         run: |
           cd ./dist/libs/ngx-dynamic-headings
-          npm publish
+          npm publish --token ${{ secrets.NPM_TOKEN }}
