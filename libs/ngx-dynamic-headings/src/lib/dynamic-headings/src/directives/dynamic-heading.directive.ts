@@ -21,7 +21,11 @@ export class DynamicHeadingDirective implements AfterContentInit {
     let biggestHeadingLevel = extractNumberFromString(headings[0].tagName);
     for (let i = 0; i < headingsParentNodes.length; i++) {
       if (headingsParentNodes[i]?.contains(this.elementRef.nativeElement)) {
-        this.resolvedHeadingLevel = `h${biggestHeadingLevel + 1}`;
+        if (biggestHeadingLevel === 6) {
+          this.resolvedHeadingLevel = `h6`;
+        } else {
+          this.resolvedHeadingLevel = `h${biggestHeadingLevel + 1}`;
+        }
         return this.replaceWithResolvedHeading();
       } else {
         if (headings[i + 1]) {
