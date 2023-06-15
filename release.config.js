@@ -14,7 +14,7 @@ module.exports = {
         },
       ],
       ["@semantic-release/npm", {
-        "pkgRoot": "/libs/ngx-dynamic-headings"
+        "pkgRoot": "libs/ngx-dynamic-headings"
       }]
     ],
   };
