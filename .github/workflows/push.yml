@@ -47,3 +47,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.DH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to npm
+        run: |
+          cd ./dist/libs/ngx-dynamic-headings
+          npm publish
