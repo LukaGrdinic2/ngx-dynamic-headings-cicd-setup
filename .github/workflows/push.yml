@@ -12,9 +12,14 @@ jobs:
       id-token: write # to enable use of OIDC for npm provenance
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Git
+        run: |
+          git config user.name LukaGrdinic
+          git config user.email 1lukagrdinic@gmail.com
       - uses: actions/setup-node@v3
         with:
           node-version: '18.5.0'
+          registry-url: 'https://registry.npmjs.org'
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
@@ -31,6 +36,7 @@ jobs:
         with:
           name: code-coverage
           path: coverage/libs/ngx-dynamic-headings
+      # Build lib to check if build throws errors
       - name:  Build ngx-dynamic-headings lib
         run: npm run build:ngx-dynamic-headings
       - name: Upload Build Folder
@@ -47,3 +53,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.DH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # TOOD: Build lib with new package.json version of the lib, upload build folder and zip assets, all before getting new semantic release
+      # Build lib with new package.json version of the lib
+      - name:  Build ngx-dynamic-headings lib
+        run: npm run build:ngx-dynamic-headings
+      - name: Publish to npm
+        run: |
+          cd ./dist/libs/ngx-dynamic-headings
+          ls
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
