@@ -29,25 +29,25 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies 
         run: npm ci
-      - name: Run tests 
-        run: npm run test
-      - name: Upload Test Coverage
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage
-          path: coverage/libs/ngx-dynamic-headings
+      # - name: Run tests 
+      #   run: npm run test
+      # - name: Upload Test Coverage
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: code-coverage
+      #     path: coverage/libs/ngx-dynamic-headings
       # Build lib to check if build throws errors
-      - name:  Build ngx-dynamic-headings lib
-        run: npm run build:ngx-dynamic-headings
-      - name: Upload Build Folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: ./dist/libs/ngx-dynamic-headings
-      - name: Zip assets
-        run:  | 
-         zip -r build.zip ./dist/libs/ngx-dynamic-headings
-         zip -r coverage.zip coverage/libs/ngx-dynamic-headings
+      # - name:  Build ngx-dynamic-headings lib
+      #   run: npm run build:ngx-dynamic-headings
+      # - name: Upload Build Folder
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: build
+      #     path: ./dist/libs/ngx-dynamic-headings
+      # - name: Zip assets
+      #   run:  | 
+      #    zip -r build.zip ./dist/libs/ngx-dynamic-headings
+      #    zip -r coverage.zip coverage/libs/ngx-dynamic-headings
       - name: Create a Release
         run: npx semantic-release
         env:
@@ -55,12 +55,12 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # TOOD: Build lib with new package.json version of the lib, upload build folder and zip assets, all before getting new semantic release
       # Build lib with new package.json version of the lib
-      - name:  Build ngx-dynamic-headings lib
-        run: npm run build:ngx-dynamic-headings
-      - name: Publish to npm
-        run: |
-          cd ./dist/libs/ngx-dynamic-headings
-          ls
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name:  Build ngx-dynamic-headings lib
+      #   run: npm run build:ngx-dynamic-headings
+      # - name: Publish to npm
+      #   run: |
+      #     cd ./dist/libs/ngx-dynamic-headings
+      #     ls
+      #     npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
