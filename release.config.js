@@ -1,6 +1,6 @@
 module.exports = {
     branches: 'main',
-    repositoryUrl: 'https://github.com/LukaGrdinic/ngx-dynamic-headings',
+    repositoryUrl: 'https://github.com/LukaGrdinic2/ngx-dynamic-headings-cicd-setup',
     plugins: [
       '@semantic-release/commit-analyzer',
       // release-notes-generator and @semantic-release/github should execute after @semantic-release/exec (after the build)
