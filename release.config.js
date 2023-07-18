@@ -5,15 +5,7 @@ module.exports = {
       '@semantic-release/commit-analyzer',
       // release-notes-generator and @semantic-release/github should execute after @semantic-release/exec (after the build)
       '@semantic-release/release-notes-generator',
-      [
-        '@semantic-release/github',
-        {
-          assets: [
-            { path: 'build.zip', label: 'Build' },
-            { path: 'coverage.zip', label: 'Coverage' },
-          ],
-        },
-      ],
+      '@semantic-release/github',
       ["@semantic-release/npm", {
         "npmPublish": false,
         "pkgRoot": "libs/ngx-dynamic-headings"
