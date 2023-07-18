@@ -47,3 +47,5 @@ In order to generate a release with semantic versioning, merged code must contai
 **feat** (feature release) or
 
 **BREAKING CHANGE:** in the commit footer (Breaking release)
+
+Add random text
