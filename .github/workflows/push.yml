@@ -38,7 +38,6 @@ jobs:
           path: coverage/libs/ngx-dynamic-headings
       - name: Make build.sh executable
         run: chmod +x build.sh
-      - name: Setup git credentials
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
         env:
