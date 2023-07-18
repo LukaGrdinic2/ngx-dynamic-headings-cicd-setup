@@ -36,18 +36,14 @@ jobs:
         with:
           name: code-coverage
           path: coverage/libs/ngx-dynamic-headings
-      # Build lib to check if build throws errors
-      - name:  Build ngx-dynamic-headings lib
-        run: npm run build:ngx-dynamic-headings
+      - name: Make build.sh executable
+        run: chmod +x hello.sh
       - name: Create a Release
         run: npx semantic-release
         env:
           GH_TOKEN: ${{ secrets.DH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # TODO: Build lib with new package.json version of the lib before getting new semantic release
-      # Build lib with new package.json version of the lib
-      - name:  Build ngx-dynamic-headings lib
-        run: npm run build:ngx-dynamic-headings
       - name: Check latest build of lib
         run: |
           cd ./dist/libs/ngx-dynamic-headings

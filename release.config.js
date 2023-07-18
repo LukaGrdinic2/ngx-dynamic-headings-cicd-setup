@@ -14,11 +14,11 @@ module.exports = {
         "assets": ["libs/ngx-dynamic-headings/package.json"],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }],
-      // [
-      //   "@semantic-release/exec",
-      //   {
-      //     "prepareCmd": "./build.sh"
-      //   }
-      // ]
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "./build.sh"
+        }
+      ]
     ],
   };
