@@ -40,7 +40,6 @@ jobs:
           path: coverage/libs/ngx-dynamic-headings
       - name: Make build.sh executable
         run: chmod +x build.sh
-      - name: Setup git credentials
       - name: Create a Release
         run: npx semantic-release
         env:
