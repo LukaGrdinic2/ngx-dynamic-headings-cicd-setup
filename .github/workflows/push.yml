@@ -38,6 +38,11 @@ jobs:
           path: coverage/libs/ngx-dynamic-headings
       - name: Make build.sh executable
         run: chmod +x build.sh
+      - name: Setup git credentials
+        run: |
+          git config --global credential.helper 'store --file ~/.git-credentials'
+          echo "https://github.com:LukaGrdinic2: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" >> ~/.git-credentials
+          chmod 600 ~/.git-credentials
       - name: Create a Release
         run: npx semantic-release
         env:
