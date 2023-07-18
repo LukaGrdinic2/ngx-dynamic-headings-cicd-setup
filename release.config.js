@@ -1,6 +1,6 @@
 module.exports = {
     branches: 'main',
-    repositoryUrl: 'https://github.com/LukaGrdinic2/ngx-dynamic-headings-cicd-setup',
+    repositoryUrl: 'https://github.com/Organization-Luka-Grdinic-2/ngx-dynamic-headings-cicd-setup.git',
     plugins: [
       '@semantic-release/commit-analyzer',
       '@semantic-release/release-notes-generator',
